@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\OrganizationController;
+use App\Http\Controllers\RequestsController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TaskController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +29,10 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+// This is the Task route
+Route::resource('tasks',TaskController::class);
+
+Route::resource('organizations',OrganizationController::class);
+
+Route::resource('requests',RequestsController::class);
